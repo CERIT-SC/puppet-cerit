@@ -13,6 +13,20 @@ Required modules:
 
 * stdlib (https://github.com/puppetlabs/puppetlabs-stdlib)
 
+# Facts
+
+* city
+* is\_cluster
+* clustername
+* clusternodeid
+* link\_ethX
+* speed\_ethX
+* has\_kernel\_zs
+* is\_numa
+* has\_scratch
+* has\_scratchssd
+* virtual
+
 ***
 
 CERIT Scientific Cloud, <support@cerit-sc.cz>
