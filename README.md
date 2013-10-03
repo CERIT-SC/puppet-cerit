@@ -19,8 +19,8 @@ Required modules:
 * is\_cluster
 * clustername
 * clusternodeid
-* link\_ethX
-* speed\_ethX
+* link\_eth***X***
+* speed\_eth***X***
 * has\_kernel\_zs
 * is\_numa
 * has\_scratch
