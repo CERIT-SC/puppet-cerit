@@ -15,17 +15,48 @@ Required modules:
 
 # Facts
 
-* city
-* is\_cluster
-* clustername
-* clusternodeid
-* link\_eth***X***
-* speed\_eth***X***
-* has\_kernel\_zs
-* is\_numa
-* has\_scratch
-* has\_scratchssd
-* virtual
+* city (e.g. *brno*, *jihlava*)
+* is\_cluster (e.g. *true*, *false*)
+* clustername (e.g. *zewura*)
+* clusternodeid (e.g. *12*)
+* link\_ethX (e.g. *true*, *false*)
+* speed\_ethX (e.g. *10000*)
+* has\_kernel\_zs (e.g. *true*, *false*)
+* is\_numa (e.g. *true*, *false*)
+* has\_scratch (e.g. *true*, *false*)
+* has\_scratchssd (e.g. *true*, *false*)
+* virtual (e.g. *true*, *false*)
+
+# Classes
+
+## cerit::firewall
+
+Configure firewall default rules (based on RHEL's defaults).
+
+    class { 'cerit::firewall':
+      enabled      => false|true,  # enable configuration
+      purge        => false|true,  # purge rules not managed by Puppet
+      strict       => false|true,  # drop all undefined traffic
+      source_ssh   => '0.0.0.0/0', # enable sshd from address range
+      source_http  => CIDR,        # enable http from address range
+      source_https => CIDR,        # enable https from address range
+      services     => {},          # hash of cerit::firewall::service resources
+    }
+
+Simple custom service rules can be specified as hash passed to
+`create_resources` to get `cerit::firewall::service` resources.
+Example:
+
+    $services = {
+      'postgresql': {
+        'port'   => '5432',
+        'source' => '1.2.3.4/24'
+      }
+    }
+
+    class { 'cerit::firewall':
+      services => $services,
+    }
 
 ***
 
