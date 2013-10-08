@@ -33,30 +33,62 @@ Required modules:
 
 Configure firewall default rules (based on RHEL's defaults).
 
-    class { 'cerit::firewall':
-      enabled      => false|true,  # enable configuration
-      purge        => false|true,  # purge rules not managed by Puppet
-      strict       => false|true,  # drop all undefined traffic
-      source_ssh   => '0.0.0.0/0', # enable sshd from address range
-      source_http  => CIDR,        # enable http from address range
-      source_https => CIDR,        # enable https from address range
-      services     => {},          # hash of cerit::firewall::service resources
-    }
+```puppet
+class { 'cerit::firewall':
+  enabled      => false|true,  # enable configuration
+  purge        => false|true,  # purge rules not managed by Puppet
+  strict       => false|true,  # drop all undefined traffic
+  source_ssh   => '0.0.0.0/0', # enable sshd from address range
+  source_http  => CIDR,        # enable http from address range
+  source_https => CIDR,        # enable https from address range
+  services     => {},          # hash of cerit::firewall::service resources
+}
+```
 
 Simple custom service rules can be specified as hash passed to
 `create_resources` to get `cerit::firewall::service` resources.
 Example:
 
-    $services = {
-      'postgresql': {
-        'port'   => '5432',
-        'source' => '1.2.3.4/24'
-      }
-    }
+```puppet
+$services = {
+  'postgresql': {
+    'port'   => '5432',
+    'source' => '1.2.3.4/24'
+  }
+}
 
-    class { 'cerit::firewall':
-      services => $services,
-    }
+class { 'cerit::firewall':
+  services => $services,
+}
+```
+
+## cerit::motd
+
+Creates standard login banners for CERIT-SC or ICS-MU.
+
+```puppet
+class { 'cerit::motd':
+  message => '...',   # custom add-on message
+  logo    => array,   # custom 4 lines logo in 4 array elements
+)
+```
+
+Example:
+
+```puppet
+$logo = [
+  ' ___         '
+  '| __|__  ___ '
+  '| _/ _ \/ _ \'
+  '|_|\___/\___/'
+]
+
+class { 'cerit::motd':
+   message => 'Merry Christmas and Happy New Year',
+   logo    => $logo,
+}
+
+```
 
 ***
 
