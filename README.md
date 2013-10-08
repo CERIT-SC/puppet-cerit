@@ -87,8 +87,18 @@ class { 'cerit::motd':
    message => 'Merry Christmas and Happy New Year',
    logo    => $logo,
 }
-
 ```
+
+Typical banner looks like:
+
+       ___ ___ ___  _ _____    ___  ___   Hostname:  localhost.localdomain (Brno)
+      / __| __| _ \| |_   _|__/ __|/ __|  System:    Debian 6.0.7 on x86_64
+     | (__| _||   /| | | ||___\__ \ (__   CPU cores: 80x (80x physical)
+      \___|___|_|_\|_| |_|    |___/\___|  Mem./swap: 504.90 GB / 162.71 GB (NUMA)
+
+    <<< custom $message here (if any) >>>
+
+    Last login: Tue Oct  8 11:45:19 2013 from localhost.localdomain
 
 ***
 
