@@ -51,7 +51,7 @@ Example:
 
 ```puppet
 $services = {
-  'postgresql': {
+  'postgresql' => {
     'port'   => '5432',
     'source' => '1.2.3.4/24'
   }
@@ -70,7 +70,7 @@ Creates standard login banners for CERIT-SC or ICS-MU.
 class { 'cerit::motd':
   message => '...',   # custom add-on message
   logo    => array,   # custom 4 lines logo in 4 array elements
-)
+}
 ```
 
 Example:
