@@ -1,6 +1,7 @@
 class cerit::motd (
-  $message = $cerit::params::motd_message,
-  $logo    = $cerit::params::motd_logo
+  $message  = $cerit::params::motd_message,
+  $logo     = $cerit::params::motd_logo,
+  $template = $cerit::params::motd_template
 ) inherits cerit::params {
 
   file { '/etc/motd.tail':
@@ -9,6 +10,6 @@ class cerit::motd (
 
   file { '/etc/motd':
     ensure  => file,
-    content => template('cerit/motd.erb'),
+    content => template($template),
   }
 }

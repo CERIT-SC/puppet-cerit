@@ -19,6 +19,7 @@ class cerit::params {
   # http://ascii.dtools.net/index1.php
   # (font small)
   $motd_message = ''
+  $motd_template = 'cerit/motd.erb'
 
   case $::domain {
     'cerit-sc.cz': {
