@@ -1,0 +1,20 @@
+# This file is managed by Puppet!
+[agent]
+listen=false
+environment=<%= @environment %>
+server=<%= @server %>
+runinterval=<%= @runinterval %>
+configtimeout=<%= @configtimeout %>
+pluginsync=true
+report=true
+splay=true
+
+[main]
+logdir=/var/log/puppet
+vardir=/var/lib/puppet
+ssldir=/var/lib/puppet/ssl
+rundir=/var/run/puppet
+factpath=$vardir/lib/facter
+templatedir=$confdir/templates
+prerun_command=<%= @prerun_command %>
+postrun_command=<%= @postrun_command %>

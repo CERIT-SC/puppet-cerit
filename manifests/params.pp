@@ -15,6 +15,20 @@ class cerit::params {
   $mount_enabled_praha2 = true
   $mount_enabled_budejovice1 = true
 
+  # puppet
+  $puppet_enabled = true
+  $puppet_cron = false
+  $puppet_command = '/bin/bash -c "sleep $((RANDOM \%% %i + 20)) && puppet agent --no-daemonize --onetime --ignorecache --no-usecacheonfailure --no-splay -v" >/dev/null 2>&1'
+  $puppet_packages = ['puppet']
+  $puppet_config = '/etc/puppet/puppet.conf'
+  $puppet_service = 'puppet'
+  $puppet_server = 'localhost'
+  $puppet_environment = 'production'
+  $puppet_runinterval = 1800
+  $puppet_configtimeout = 120
+  $puppet_prerun_command = ''
+  $puppet_postrun_command = ''
+
   # motd
   # http://ascii.dtools.net/index1.php
   # (font small)
