@@ -29,6 +29,12 @@ Required modules:
 
 # Classes
 
+List:
+
+* [cerit::firewall](#cerit::firewall)
+* [cerit::puppet](#cerit::puppet)
+* [cerit::motd](#cerit::motd)
+
 ## cerit::firewall
 
 Configure firewall default rules (based on RHEL's defaults).
