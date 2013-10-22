@@ -62,6 +62,37 @@ class { 'cerit::firewall':
 }
 ```
 
+## cerit::puppet
+
+Simple Puppet agent boostrap.
+
+```puppet
+class { 'cerit::puppet':
+  enabled         => false|true,   # enable Puppet
+  cron            => false|true,   # Puppet as service or cron
+  command         => '...',        # cron command
+  packages        => array,        # packages override
+  config          => '...',        # configuration file
+  service         => 'puppet',     # service name
+  server          => '...'.        # Puppet server hostname
+  environment     => 'production', # Puppet environment
+  runinterval     => 1800,         # run interval
+  configtimeout   => 120,          # server timeout
+  prerun_command  => '...',        # prerun command
+  postrun_command => '...',        # postrun command
+}
+```
+
+Example:
+
+```puppet
+class { 'cerit::puppet':
+  server      => 'puppet.example.com',
+  environment => 'devel',
+  runinterval => 3600, # once per hour
+}
+```
+
 ## cerit::motd
 
 Creates standard login banners for CERIT-SC or ICS-MU.
@@ -77,15 +108,15 @@ Example:
 
 ```puppet
 $logo = [
-  ' ___         '
-  '| __|__  ___ '
-  '| _/ _ \/ _ \'
-  '|_|\___/\___/'
+  ' ___         ',
+  '| __|__  ___ ',
+  '| _/ _ \/ _ \',
+  '|_|\___/\___/',
 ]
 
 class { 'cerit::motd':
-   message => 'Merry Christmas and Happy New Year',
-   logo    => $logo,
+  message => 'Merry Christmas and Happy New Year',
+  logo    => $logo,
 }
 ```
 
