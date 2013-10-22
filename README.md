@@ -31,9 +31,9 @@ Required modules:
 
 List:
 
-* [cerit::firewall](#cerit::firewall)
-* [cerit::puppet](#cerit::puppet)
-* [cerit::motd](#cerit::motd)
+* [cerit::firewall](#ceritfirewall)
+* [cerit::puppet](#ceritpuppet)
+* [cerit::motd](#ceritmotd)
 
 ## cerit::firewall
 
