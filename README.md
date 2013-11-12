@@ -32,6 +32,7 @@ Required modules:
 List:
 
 * [cerit::firewall](#ceritfirewall)
+* [cerit::passwd](#ceritpasswd)
 * [cerit::puppet](#ceritpuppet)
 * [cerit::motd](#ceritmotd)
 
@@ -65,6 +66,34 @@ $services = {
 
 class { 'cerit::firewall':
   services => $services,
+}
+```
+
+## cerit::passwd
+
+Set password for privileged user default or based on 
+host (group) security level.
+
+```puppet
+class { 'cerit::passwd':
+  user     => 'root',  # privileged user name
+  password => '*',     # default password
+  level    => '...',   # host security level
+  levels   => { ... }, # hash of security levels and passwords
+}
+```
+
+Example: 
+
+```puppet
+class { 'cerit::passwd':
+  password => '*',   # empty default password, if no level specified
+  level    => 2,     # take password for security level 2
+  levels   => {
+    1 => 'password hash X',
+    2 => 'password hash Y,
+    3 => 'password hash Z'
+  },
 }
 ```
 
