@@ -91,7 +91,7 @@ class { 'cerit::passwd':
   level    => 2,     # take password for security level 2
   levels   => {
     1 => 'password hash X',
-    2 => 'password hash Y,
+    2 => 'password hash Y',
     3 => 'password hash Z'
   },
 }
