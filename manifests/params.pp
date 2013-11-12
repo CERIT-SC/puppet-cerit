@@ -15,6 +15,12 @@ class cerit::params {
   $mount_enabled_praha2 = true
   $mount_enabled_budejovice1 = true
 
+  # passwd
+  $passwd_user = 'root'
+  $passwd_password = '*'
+  $passwd_level = undef
+  $passwd_levels = {}
+
   # puppet
   $puppet_enabled = true
   $puppet_cron = false
