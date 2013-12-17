@@ -35,6 +35,7 @@ List:
 * [cerit::passwd](#ceritpasswd)
 * [cerit::puppet](#ceritpuppet)
 * [cerit::motd](#ceritmotd)
+* [cerit::zenoss](#ceritzenoss)
 
 ## cerit::firewall
 
@@ -165,6 +166,39 @@ Typical banner looks like:
     <<< custom $message here (if any) >>>
 
     Last login: Tue Oct  8 11:45:19 2013 from localhost.localdomain
+
+
+## cerit::zenoss
+
+Create unprivileged Zenoss user for remote monitoring via SSH.
+
+```puppet
+class { 'cerit::zenoss':
+  enabled         => false|true,      # enable Zenoss user
+  user_name       => '...',           # user name
+  group_name      => '...',           # group name
+  allow_from      => '...',           # restrict access via SSH key from
+  key             => '...',           # SSH public key
+  type            => '...',           # SSH public key type
+  sudo_package    => '...',           # package name with sudo
+  sudo_parameters => ['!requiretty'], # list of sudo parameters for user group
+  sudo_commands   => [                # list of allowed commands in sudo format
+    '(ALL) NOPASSWD: /usr/sbin/dmidecode *',
+    '(ALL) NOPASSWD: /usr/bin/ipmitool *',
+    '(ALL) NOPASSWD: /usr/sbin/smartctl *'
+  ],
+}
+```
+
+Example:
+
+```puppet
+class { 'cerit::zenoss':
+  allow_from => 'zenoss.localdomain',
+  user_name  => 'zen',
+  group_name => 'zen',
+}
+```
 
 ***
 
