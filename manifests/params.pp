@@ -38,6 +38,11 @@ class cerit::params {
   # motd
   # http://ascii.dtools.net/index1.php
   # (font small)
+  $motd_filename = $::operatingsystem ? {
+    windows => 'c:/cygwin/etc/motd',
+    default => '/etc/motd'
+  }
+
   $motd_message = ''
   $motd_template = 'cerit/motd.erb'
 
