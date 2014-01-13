@@ -1,6 +1,6 @@
 
  <%= logo[0] %>  Hostname:  <%= scope['::fqdn'] %> <% if (scope['::domain'] == 'cerit-sc.cz') and scope['::city'] %>(<%= scope['::city'].capitalize %>)<% end %>
- <%= logo[1] %>  System:    <%= scope['::operatingsystem'].capitalize %> <%= scope['::operatingsystemrelease'] %> on <%= scope['::hardwaremodel'] %>
+ <%= logo[1] %>  System:    <%= scope['::operatingsystem'].slice(0,1).capitalize %><%= scope['::operatingsystem'].slice(1..-1) %> <%= scope['::operatingsystemrelease'] %> on <%= scope['::hardwaremodel'] %>
  <%= logo[2] %>  CPU cores: <% if scope['::is_virtual'] == 'true' %>virtual <% end %><%= scope['::processorcount'] %>x <% if (scope['::is_virtual'] == 'false') and scope['::physicalcorecount'] %>(<%= scope['::physicalcorecount'] %>x physical)<% end %><% if scope['::is_virtual'] == 'true' %>(<%= scope['::virtual'] %>)<% end %>
  <%= logo[3] %>  Mem./swap: <%= scope['::memorysize'] %><% if ! scope['::swapsize'].nil? %> / <%= scope['::swapsize'] %><% end %><% if scope['::is_numa'] == 'true' %> (NUMA)<% end %>
 
