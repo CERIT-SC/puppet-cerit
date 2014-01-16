@@ -38,9 +38,16 @@ class cerit::params {
   # motd
   # http://ascii.dtools.net/index1.php
   # (font small)
-  $motd_filename = $::operatingsystem ? {
-    windows => 'c:/cygwin/etc/motd',
-    default => '/etc/motd'
+  case $::operatingsystem {
+    windows: {
+      $motd_filename = 'c:/cygwin/etc/motd'
+      $motd_mode = '0664'
+    }
+
+    default: {
+      $motd_filename = '/etc/motd'
+      $motd_mode = '0644'
+    }
   }
 
   $motd_message = ''
