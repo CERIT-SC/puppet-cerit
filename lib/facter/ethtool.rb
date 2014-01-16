@@ -11,7 +11,7 @@
 #   Reliable as ethtool
 #
 ifaces = Facter.value(:interfaces)
-if ifaces
+if ifaces and Facter.value(:kernel) == 'Linux'
   ifaces.split(',').each do |iface|
     out = Facter::Util::Resolution.exec("ethtool #{iface} 2>/dev/null")
     if out =~ /Link detected: (yes|no)/
