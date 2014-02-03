@@ -21,6 +21,7 @@ Required modules:
 * clusternodeid (e.g. *12*)
 * link\_ethX (e.g. *true*, *false*)
 * speed\_ethX (e.g. *10000*)
+* kernels\_avail (comma separated list of installable kernel packages)
 * has\_kernel\_zs (e.g. *true*, *false*)
 * is\_numa (e.g. *true*, *false*)
 * has\_scratch (e.g. *true*, *false*)
