@@ -211,7 +211,7 @@ Various one-time OS hacks
 
 ### cerit::hack::asyncmountnfs
 
-Enable asynchronous NFS mount on Debian.
+Enable/disable asynchronous NFS mounts on Debian.
 
 ### cerit::hack::fqdn\_hostname
 
