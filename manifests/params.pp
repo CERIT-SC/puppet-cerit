@@ -15,6 +15,13 @@ class cerit::params {
   $mount_enabled_praha2 = true
   $mount_enabled_budejovice1 = true
 
+  # perun
+  $perun_usrquota_rootfs_ensure = present
+  $perun_usrquota_rootfs_block_soft = 1000000
+  $perun_usrquota_rootfs_block_hard = 1000000
+  $perun_usrquota_rootfs_inode_soft = 0
+  $perun_usrquota_rootfs_inode_hard = 0
+
   # passwd
   $passwd_user = 'root'
   $passwd_password = '*'
