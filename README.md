@@ -29,7 +29,7 @@ Required modules:
 * has\_scratch (e.g. *true*, *false*)
 * has\_scratchssd (e.g. *true*, *false*)
 * mounts (comma separated list of mount points)
-* virtual (e.g. *true*, *false*)
+* virtual (generic fact fixed for KVM with host modeled CPUs)
 
 # Classes
 
