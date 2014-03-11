@@ -11,7 +11,7 @@
 Facter.add("kernels_avail") do
   confine :operatingsystem => :Debian
   setcode do
-    pkgs = Facter::Util::Resolution.exec('apt-cache pkgnames linux-image')
+    pkgs = Facter::Util::Resolution.exec('apt-cache search "^linux-image-" | cut -d" " -f1')
     if pkgs 
       pkgs.split.sort.join(',')
     else
