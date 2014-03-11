@@ -82,6 +82,14 @@ class cerit::params {
     }
   }
 
+  # hacks
+  $hack_asyncmountnfs_enabled = false
+  $hack_fqdn_hostname_enabled  = true
+  $hack_fqdn_hostname_filename = $::osfamily ? {
+    suse    => '/etc/HOSTNAME',
+    default => '/etc/hostname',
+  }
+
   # zenoss
   $zenoss_ssh_enabled = true
   $zenoss_ssh_user_name = 'zenoss'

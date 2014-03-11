@@ -40,6 +40,7 @@ List:
 * [cerit::puppet](#ceritpuppet)
 * [cerit::motd](#ceritmotd)
 * [cerit::zenoss](#ceritzenoss)
+* [cerit::hack](#cerithack)
 
 ## cerit::firewall
 
@@ -203,6 +204,18 @@ class { 'cerit::zenoss':
   group_name => 'zen',
 }
 ```
+
+## cerit::hack classes
+
+Various one-time OS hacks
+
+### cerit::hack::asyncmountnfs
+
+Enable asynchronous NFS mount on Debian.
+
+### cerit::hack::fqdn\_hostname
+
+Write FQDN into machine hostname configuration.
 
 ***
 
