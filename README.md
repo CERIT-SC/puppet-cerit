@@ -40,7 +40,7 @@ List:
 * [cerit::puppet](#ceritpuppet)
 * [cerit::motd](#ceritmotd)
 * [cerit::zenoss](#ceritzenoss)
-* [cerit::hack](#cerithack)
+* [cerit::hack](#cerithackclasses)
 
 ## cerit::firewall
 
