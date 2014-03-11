@@ -21,11 +21,14 @@ Required modules:
 * clusternodeid (e.g. *12*)
 * link\_ethX (e.g. *true*, *false*)
 * speed\_ethX (e.g. *10000*)
+* speeds\_ethX (e.g. *10,100,1000*)
 * kernels\_avail (comma separated list of installable kernel packages)
+* headers\_avail (comma separated list of installable kernel header packages)
 * has\_kernel\_zs (e.g. *true*, *false*)
 * is\_numa (e.g. *true*, *false*)
 * has\_scratch (e.g. *true*, *false*)
 * has\_scratchssd (e.g. *true*, *false*)
+* mounts (comma separated list of mount points)
 * virtual (e.g. *true*, *false*)
 
 # Classes
