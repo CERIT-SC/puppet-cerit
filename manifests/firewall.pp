@@ -8,9 +8,7 @@ class cerit::firewall (
   $services        = $cerit::params::firewall_services
 ) inherits cerit::params {
 
-  validate_bool($enabled)
-  validate_bool($purge)
-  validate_bool($strict)
+  validate_bool($enabled, $purge, $strict)
   validate_hash($services)
 
   if $enabled {
@@ -23,7 +21,7 @@ class cerit::firewall (
       require => Class['cerit::firewall::pre'],
     }
 
-    include firewall
+    include ::firewall
     include cerit::firewall::pre
     class { 'cerit::firewall::post':
       strict => $strict;

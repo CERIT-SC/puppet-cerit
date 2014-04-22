@@ -8,8 +8,14 @@ define cerit::firewall::service (
 ) {
   validate_bool($strict)
 
-  $name_accept = "${seq} Puppet: accept ${port}/${proto} (${name})"
-  $name_reject = "${seq_rej} Puppet: reject ${port}/${proto} (${name})"
+  if is_array($port) {
+    $port_str = join($port, ',')
+  } else {
+    $port_str = $port
+  }
+
+  $name_accept = "${seq} Puppet: accept ${port_str}/${proto} (${name})"
+  $name_reject = "${seq_rej} Puppet: reject ${port_str}/${proto} (${name})"
 
   @firewall { $name_accept:
     dport  => $port,
