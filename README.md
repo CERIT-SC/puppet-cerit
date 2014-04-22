@@ -15,21 +15,33 @@ Required modules:
 
 # Facts
 
-* city (e.g. *brno*, *jihlava*)
-* is\_cluster (e.g. *true*, *false*)
-* clustername (e.g. *zewura*)
-* clusternodeid (e.g. *12*)
-* link\_ethX (e.g. *true*, *false*)
-* speed\_ethX (e.g. *10000*)
-* speeds\_ethX (e.g. *10,100,1000*)
-* kernels\_avail (comma separated list of installable kernel packages)
-* headers\_avail (comma separated list of installable kernel header packages)
-* has\_kernel\_zs (e.g. *true*, *false*)
-* is\_numa (e.g. *true*, *false*)
-* has\_scratch (e.g. *true*, *false*)
-* has\_scratchssd (e.g. *true*, *false*)
-* mounts (comma separated list of mount points)
-* virtual (generic fact fixed for KVM with host modeled CPUs)
+Fact                         | Description                      | Example
+---------------------------- | -------------------------------- | -----------------
+**city**                     | Machine physical location        | *brno*, *jihlava*
+**is\_cluster**              | Is cluster node?                 | *true*, *false*
+**clustername**              | Detect name of cluster           | *zewura*
+**clusternodeid**            | Detect node ID in cluster        | *12*
+**link\_ethX**               | Is link on net. iface?           | *true*, *false*
+**speed\_ethX**              | Net. iface speed [Mbit/s]        | *10000*
+**speeds\_ethX**             | List of supported net. speeds    | *10,100,1000*
+**kernels\_avail**           | List of available kernel pkgs    |
+**headers\_avail**           | List of available header pkgs    |
+**has\_kernel\_zs**          | Is running kernel patched by ZS? | *true*, *false*
+**has\_scratch**             | Is /scratch available?           | *true*, *false*
+**has\_scratchssd**          | Is /scratch.ssd available?       | *true*, *false*
+**mounts**                   | List of current mount points     | */,/boot,/home*
+**virtual**                  | Fixed generic fact for KVM       |
+**is\_numa**                 | Is hardware NUMA?                | *true*, *false*
+**numacount**                | Number of NUMA nodes             |
+**has\_hyperthreading**      | Is hyperthreading enabled?       | *true*, *false*
+**physicalcorecount**        | Number of physical cores         | 
+**processorcorethreadcount** | Number of threads per core       |
+**processorcorecount**       | Number of cores per socket       |
+**processorsocketcount**     | Number of CPU sockets in system  |
+**processorl1dsize**         | L1 data cache size               |
+**processorl1isize**         | L1 instruction cache size        |
+**processorl2size**          | L2 cache size                    |
+**processorl3size**          | L3 cache size                    |
 
 # Classes
 
