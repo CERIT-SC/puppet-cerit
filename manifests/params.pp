@@ -83,8 +83,20 @@ class cerit::params {
   }
 
   # hacks
+  $hack_hosts_own_ip_enabled = true
+  $hack_hosts_own_ip_fqdn = $::fqdn
+  $hack_hosts_own_ip_host_aliases = [$::hostname]
+
+  if $::network_public_ip {
+    $hack_hosts_own_ip_ip = $::network_public_ip
+  } elsif $::network_primary_ip {
+    $hack_hosts_own_ip_ip = $::network_primary_ip
+  } else {
+    $hack_hosts_own_ip_ip = $::ipaddress
+  }
+
   $hack_asyncmountnfs_enabled = false
-  $hack_fqdn_hostname_enabled  = true
+  $hack_fqdn_hostname_enabled = true
   $hack_fqdn_hostname_filename = $::osfamily ? {
     suse    => '/etc/HOSTNAME',
     default => '/etc/hostname',
