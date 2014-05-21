@@ -27,6 +27,7 @@ Fact                         | Description                      | Example
 **kernels\_avail**           | List of available kernel pkgs    |
 **headers\_avail**           | List of available header pkgs    |
 **has\_kernel\_zs**          | Is running kernel patched by ZS? | *true*, *false*
+**has\_libnfsidmap2\_du**    | Is installed our libnfsidmap2?   | *true*, *false*
 **has\_scratch**             | Is /scratch available?           | *true*, *false*
 **has\_scratchssd**          | Is /scratch.ssd available?       | *true*, *false*
 **mounts**                   | List of current mount points     | */,/boot,/home*
