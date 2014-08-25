@@ -1,0 +1,60 @@
+{
+  "name": "ceritsc-cerit",
+  "version": "0.9.0",
+  "author": "ceritsc",
+  "summary": "Setup CERIT-SC's environment" ,
+  "license": "MIT",
+  "source": "https://github.com/CERIT-SC/puppet-cerit.git",
+  "project_page": "https://github.com/CERIT-SC/puppet-cerit",
+  "issues_url": "https://github.com/CERIT-SC/puppet-cerit/issues",
+  "tags": [
+    "cerit"
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat"
+    },
+    {
+      "operatingsystem": "CentOS"
+    },
+    {
+      "operatingsystem": "Scientific"
+    },
+    {
+      "operatingsystem": "OracleLinux"
+    },
+    {
+      "operatingsystem": "SLES"
+    },
+    {
+      "operatingsystem": "SLED"
+    },
+    {
+      "operatingsystem": "Debian"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": "3.3.x"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": "3.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 4.0.0"
+    },
+    {
+      "name": "puppetlabs-firewall",
+      "version_requirement": ">= 1.1.3"
+    },
+    {
+      "name": "ceritsc-perun",
+      "version_requirement": ">= 0.9.0"
+    }
+  ]
+}
