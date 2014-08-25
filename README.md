@@ -26,6 +26,7 @@ Fact                         | Description                      | Example
 **speeds\_ethX**             | List of supported net. speeds    | *10,100,1000*
 **kernels\_avail**           | List of available kernel pkgs    |
 **headers\_avail**           | List of available header pkgs    |
+**has\_dmar\_error**         | Is there DMAR error on machine?  | *true*, *false*
 **has\_kernel\_zs**          | Is running kernel patched by ZS? | *true*, *false*
 **has\_libnfsidmap2\_du**    | Is installed our libnfsidmap2?   | *true*, *false*
 **has\_scratch**             | Is /scratch available?           | *true*, *false*
